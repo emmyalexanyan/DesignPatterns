@@ -1,8 +1,21 @@
+//Singleton
 #include <iostream>
 #include <memory>
 #include <ctime>
 
 class Timer{
+    public:
+        static std::shared_ptr<Timer> getInstance() {
+            if(!instance){
+                instance = std::shared_ptr<Timer>(new Timer());
+            }
+            return instance;
+        }
+
+        double elapsedTime(){
+            clock_t endTime = clock();
+            return (double)(endTime - startTime) / CLOCKS_PER_SEC;
+        }
     private:
         Timer(){
             std::cout<<"Timer created\n";
@@ -18,18 +31,6 @@ class Timer{
         static std::shared_ptr<Timer> instance;
         clock_t startTime;
 
-    public:
-        static std::shared_ptr<Timer> getInstance() {
-            if(!instance){
-                instance = std::shared_ptr<Timer>(new Timer());
-            }
-            return instance;
-        }
-
-        double elapsedTime(){
-            clock_t endTime = clock();
-            return (double)(endTime - startTime) / CLOCKS_PER_SEC;
-        }
 
 };
 std::shared_ptr<Timer> Timer::instance = nullptr;
