@@ -1,4 +1,3 @@
-//Prototype
 #include <iostream>
 #include <memory>
 #include <string>

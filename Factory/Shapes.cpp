@@ -1,4 +1,3 @@
-//Factory
 #include <iostream>
 #include <memory>
 

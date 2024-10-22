@@ -1,4 +1,3 @@
-//AbstractFactory
 #include <iostream>
 #include <memory>
 

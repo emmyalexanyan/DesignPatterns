@@ -1,4 +1,3 @@
-//Singleton
 #include <iostream>
 #include <memory>
 #include <ctime>
